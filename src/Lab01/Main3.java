@@ -19,12 +19,21 @@ public class Main3 {
 
         // if the user wants to find the average mark of a module,
         // call the calculateModuleAverageMark method and show the result in DOS prompt
+        if (argv[0].equals("average")) {
+            System.out.println("The average mark of module " + argv[1] + " = " + calculateModuleAverageMark(argv[1]));
+        }
 
         // else if the user wants to find the median mark of a module,
         // call the calculateModuleMedian method and show the result in DOS prompt
+        if (argv[0].equals("median")) {
+            System.out.println("The median of module " + argv[1] + " = " + calculateModuleMedian(argv[1]));
+        }
 
         // else if the user wants to find the best students (may have more than 1 best student) of a module,
         // call the displayBestStudent method
+        if (argv[0].equals("beststudent")) {
+            displayBestStudent(argv[1]);
+        }
 
         // else show the message on how to run the program in DOS prompt and exit the program
 
