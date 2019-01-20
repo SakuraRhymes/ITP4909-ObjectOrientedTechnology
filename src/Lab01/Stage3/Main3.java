@@ -78,7 +78,7 @@ public class Main3 {
         int highestMark = marks[0];
 
         for (int i = 1; i < marks.length; i++) {
-            if (highestMark<marks[i])
+            if (highestMark < marks[i])
                 highestMark = marks[i];
         }
 
@@ -86,7 +86,7 @@ public class Main3 {
 
         for (int i = 0; i < marks.length; i++) {
             if (marks[i] == highestMark)
-                System.out.println("Student "+GRSData.getStudentID(i));
+                System.out.println("Student " + GRSData.getStudentID(i));
         }
     }
 

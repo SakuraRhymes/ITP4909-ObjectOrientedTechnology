@@ -81,7 +81,7 @@ public class Main2 {
         int highestMark = letterToNumeric(marks[index][0]);
 
         for (int i = 1; i < marks[index].length; i++) {
-            if (highestMark<letterToNumeric(marks[index][i]))
+            if (highestMark < letterToNumeric(marks[index][i]))
                 highestMark = letterToNumeric(marks[index][i]);
         }
 
@@ -89,7 +89,7 @@ public class Main2 {
 
         for (int i = 0; i < marks[index].length; i++) {
             if (letterToNumeric(marks[index][i]) == highestMark)
-                System.out.println("Student "+(i+1));
+                System.out.println("Student " + (i + 1));
         }
     }
 
