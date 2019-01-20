@@ -1,4 +1,4 @@
-package Lab01;
+package Lab01.Stage3;
 
 class GRSData {
 

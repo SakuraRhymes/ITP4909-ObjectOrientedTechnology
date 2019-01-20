@@ -1,6 +1,6 @@
-package Lab01;
+package Lab01.Stage3;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class Main3 {
 

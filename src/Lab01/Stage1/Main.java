@@ -1,19 +1,19 @@
-package Lab01;
+package Lab01.Stage1;
 
 import java.util.*;
 
-public class Main2 {
+public class Main {
     // Test Data for the program
     private static String[] moduleCode = {"ITD2322", "ICT2422", "ITD2321", "ICT2669"};
     private static String[] studentID = {"1", "2", "3", "4", "5", "6", "7", "8"};
-    private static char[][] marks = {{'F', 'D', 'C', 'B', 'C', 'B', 'C', 'A'}, // mark for ITD2322
-            {'D', 'B', 'A', 'A', 'F', 'B', 'C', 'C'}, // mark for ICT2422
-            {'D', 'B', 'E', 'B', 'C', 'F', 'F', 'D'}, // mark for ITD2321
-            {'C', 'B', 'E', 'D', 'C', 'B', 'C', 'A'}}; // mark for ICT2669
+    private static int[][] marks = {{30, 40, 50, 60, 45, 55, 65, 75}, // mark for ITD2322
+            {80, 70, 60, 40, 34, 56, 78, 90}, // mark for ICT2422
+            {76, 45, 67, 89, 12, 45, 67, 54}, // mark for ITD2321
+            {56, 76, 54, 55, 50, 43, 66, 44}}; // mark for ICT2669
 
     public static void main(String[] argv) {
         if (argv.length != 2) {
-            System.out.println("Usage: java Main2 {average | median | beststudent} module <module code>");
+            System.out.println("Usage: java Main {average | median | beststudent} <module code>");
             System.exit(1);
         }
 
@@ -36,17 +36,17 @@ public class Main2 {
         }
 
         // else show the message on how to run the program in DOS prompt and exit the program
+
     }
 
     public static double calculateModuleAverageMark(String mCode) {
 
         // return the average mark of a module (module code as input parameter "mCode")
-        // numeric average mark is to be returned (since 'A' -> 5, 'B' -> 4, 'C' -> 3 etc..)
         int index = getModuleIndex(mCode);
         double result = 0;
 
         for (int i = 0; i < marks[index].length; i++) {
-            result += letterToNumeric(marks[index][i]);
+            result += marks[index][i];
         }
 
         result /= marks[index].length;
@@ -57,15 +57,14 @@ public class Main2 {
     public static double calculateModuleMedian(String mCode) {
 
         // return the median mark of a module (module code as input parameter "mCode")
-        // numeric median mark is to be returned (since 'A' -> 5, 'B' -> 4, 'C' -> 3 etc..)
         int index = getModuleIndex(mCode);
         double median = 0;
         Arrays.sort(marks[index]);
 
         if (marks[index].length % 2 == 0) {
-            median = (letterToNumeric(marks[index][marks[index].length / 2]) + letterToNumeric(marks[index][(marks[index].length / 2) - 1])) / 2.0;
+            median = (marks[index][marks[index].length / 2] + marks[index][(marks[index].length / 2) - 1]) / 2.0;
         } else
-            median = letterToNumeric(marks[index][marks[index].length / 2]);
+            median = marks[index][marks[index].length / 2];
 
         return median;
     }
@@ -75,24 +74,21 @@ public class Main2 {
         // find the highest mark of a module (module code as input parameter "mCode")
         // then find the studentID(s) of student(s) with the highest mark
         // show the above information in DOS prompt
-
-        // numeric highest mark is to be returned (since 'A' -> 5, 'B' -> 4, 'C' -> 3 etc..)
         int index = getModuleIndex(mCode);
-        int highestMark = letterToNumeric(marks[index][0]);
+        int highestMark = marks[index][0];
 
         for (int i = 1; i < marks[index].length; i++) {
-            if (highestMark<letterToNumeric(marks[index][i]))
-                highestMark = letterToNumeric(marks[index][i]);
+            if (highestMark<marks[index][i])
+                highestMark = marks[index][i];
         }
 
         System.out.println("In module " + mCode + ", the following students perform the best:");
 
         for (int i = 0; i < marks[index].length; i++) {
-            if (letterToNumeric(marks[index][i]) == highestMark)
+            if (marks[index][i] == highestMark)
                 System.out.println("Student "+(i+1));
         }
     }
-
 
     public static int getModuleIndex(String mCode) {
 
@@ -109,29 +105,6 @@ public class Main2 {
                 return 2;
             case "ICT2669":
                 return 3;
-            default:
-                return 0;
-        }
-    }
-
-    public static int letterToNumeric(char grade) {
-
-        // convert and return a numeric mark from a grade (grade as input pararmeter "grade")
-
-        // you need to call this method before doing any calculations on marks
-        switch (grade) {
-            case 'A':
-                return 5;
-            case 'B':
-                return 4;
-            case 'C':
-                return 3;
-            case 'D':
-                return 2;
-            case 'E':
-                return 1;
-            case 'F':
-                return 0;
             default:
                 return 0;
         }
