@@ -22,11 +22,11 @@ public class Main5 {
         }
         if (argv[0].equals("numeric")) {
             if (argv[1].equals("average")) {
-                System.out.println("The average mark of module " + argv[2] + " = " + calculateModuleAverageMarkNum(argv[1]));
+                System.out.println("The average mark of module " + argv[2] + " = " + calculateModuleAverageMarkNum(argv[2]));
             }
 
             if (argv[1].equals("median")) {
-                System.out.println("The median of module " + argv[2] + " = " + calculateModuleMedianNum(argv[1]));
+                System.out.println("The median of module " + argv[2] + " = " + calculateModuleMedianNum(argv[2]));
             }
 
             if (argv[1].equals("beststudent")) {
@@ -34,11 +34,11 @@ public class Main5 {
             }
         } else if (argv[0].equals("letter")) {
             if (argv[1].equals("average")) {
-                System.out.println("The average mark of module " + argv[2] + " = " + calculateModuleAverageMarkLetter(argv[1]));
+                System.out.println("The average mark of module " + argv[2] + " = " + calculateModuleAverageMarkLetter(argv[2]));
             }
 
             if (argv[1].equals("median")) {
-                System.out.println("The median of module " + argv[2] + " = " + calculateModuleMedianLetter(argv[1]));
+                System.out.println("The median of module " + argv[2] + " = " + calculateModuleMedianLetter(argv[2]));
             }
 
             if (argv[1].equals("beststudent")) {
