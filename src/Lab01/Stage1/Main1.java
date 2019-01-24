@@ -2,7 +2,7 @@ package Lab01.Stage1;
 
 import java.util.*;
 
-public class Main {
+public class Main1 {
     // Test Data for the program
     private static String[] moduleCode = {"ITD2322", "ICT2422", "ITD2321", "ICT2669"};
     private static String[] studentID = {"1", "2", "3", "4", "5", "6", "7", "8"};
